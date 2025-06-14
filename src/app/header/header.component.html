@@ -1,0 +1,50 @@
+<header class="sticky">
+    <div class="bg-gray ">
+        <div class="fluid-container ">
+            <div class="row">
+                <div class="col-12">
+                    <div class=" nav-link ">
+                        <div class="logo mb-5 mt-4 d-flex flex-column align-items-center">
+                            <a class="navbar-brand mb-2" routerLink="/">
+                                <img src="/img/vipPort.jpeg" alt="Vipin joshi DP"></a>
+                            <h2>Vipin Joshi</h2>
+                            <p class="highlight">Angular developer</p>
+                        </div>
+
+                        <div class="mb-3 mb-sm-5">
+                            <!-- [routerLinkActiveOptions]="{ exact: true }/" -->
+                            <ul class="mb-0 list-unstyled text-center">
+                                <li><a  class="navLink active"  (click)="scrollToSection('home')" 
+                                      
+                                        >home</a></li>
+                                <li><a class=" navLink  active"   (click)="scrollToSection('about')"
+                                         >About</a></li>
+                                          <li><a class=" navLink  active"  (click)="scrollToSection('skills'); $event.preventDefault()"
+                                         >Skills</a></li>
+                                          <li><a class=" navLink  active"  (click)="scrollToSection('education')" 
+                                         >Education</a></li>
+                                         <li><a class="active navLink" (click)="scrollToSection('experience')"
+                                         >Experience</a></li>
+                               
+                                
+                                          <li><a (click)="scrollToSection('Contact')"
+                                         class="navLink active">Contact-us</a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="footer-text p-3 text-center">
+                            <p>&copy; 2025 Vipin Joshi. All rights reserved.</p>
+<!-- <p>Made with ❤️ by Vipin Joshi | © 2025</p> -->
+
+                        </div>
+                       
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

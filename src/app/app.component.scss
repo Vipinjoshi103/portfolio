@@ -1,0 +1,45 @@
+
+.portfolio{
+    position: relative;
+    .bg-gray{
+    background-color: #666;
+    }
+       .sticky{
+   position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+  
+}
+
+.active{
+     color: rgb(160, 235, 160);
+      transition: color 0.5s ease-in-out;
+}
+.nav-link{
+    .navbar-brand{
+        color: rgb(160, 235, 160);
+       
+    }
+    li{
+        padding: 10px ;
+        margin-left: 5px ;
+       a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+            color: rgb(160, 235, 160);
+            transition: color 0.5s ease-in-out;
+        }
+       }
+       
+    }
+    a{
+        font-family: popins-light;
+        text-transform: uppercase;
+    }
+    .navbar-brand{
+        font-family: popins-bold;
+    }
+}

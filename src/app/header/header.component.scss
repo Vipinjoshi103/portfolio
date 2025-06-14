@@ -1,0 +1,73 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+.active {
+    color: rgb(160, 235, 160);
+    transition: color 0.5s ease-in-out;
+}
+
+.nav-link {
+    height: 100vh;
+    overflow-y: scroll;
+
+    .navbar-brand {
+        color: rgb(160, 235, 160);
+
+        img {
+            height: 190px;
+            border-radius: 50%;
+            width: 175px;
+            border: 1px solid green;
+        }
+
+    }
+
+    li {
+        padding: 10px;
+        margin-left: 5px;
+
+        a {
+            text-decoration: none;
+            color: #000;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #218838;
+                text-decoration: underline;
+                
+                transition: color 0.5s ease-in-out;
+            }
+
+        }
+
+        .active {
+            color: #28a745;
+            transition: color 0.5s ease-in-out;
+        }
+
+    }
+
+    a {
+        font-family: popins-light;
+        text-transform: uppercase;
+    }
+
+    .navbar-brand {
+        font-family: popins-bold;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 50%;
+    display: none;
+    }
+    
+}

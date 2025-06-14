@@ -1,0 +1,210 @@
+<div #homeSection class="container bg-img home-container py-sm-5 px-sm-5 py-4 " id="home">
+  <div class="row h-100vh align-items-center">
+    <div class="col-12 my_text">
+      <h1>Welcome to My Portfolio! <br>
+        Hello, I'm <span class="highlight f-28">{{ name }}</span>
+      </h1>
+
+      <h2>{{ title }}</h2>
+
+      <p class="about mb-3 mt-sm-4 mb-sm-5 col-lg-8">{{ about }}</p>
+
+
+
+      <span> <a class="cta-btn" title="Download" href="/VIP-CV-IN.pdf" download>Download CV</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+  <!-- About Preview -->
+  <section  id="about" #aboutSection>
+    <div class="container about-section py-4 px-3 px-sm-5 px-sm-5 bg-gray">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title mb-3 mb-sm-4 text-center">About Me</h2>
+          <p class="about-intro">
+            Hello! I’m <strong>Vipin Joshi</strong>, a passionate and dedicated Frontend Web Developer based in India.
+            I specialize in building responsive and user-friendly web applications using <strong>Angular</strong>,
+            <strong>JavaScript</strong>, <strong>HTML5</strong>, and <strong>CSS3</strong>.
+          </p>
+
+          <p class="about-body">
+            I enjoy transforming ideas into real-world, efficient, and interactive web experiences. Whether it’s a
+            personal
+            project, a portfolio website, or a business web app,
+            I focus on clean code, performance, and great user experience. I also like experimenting with new
+            technologies
+            and tools to improve my development process.
+          </p>
+
+          <p class="about-goal">
+            My goal is to continue growing as a developer by learning and working on meaningful projects. I'm currently
+            looking for opportunities to contribute to real-world applications and collaborate with creative teams.
+          </p>
+
+          <p class="about-note">
+            When I’m not coding, you’ll find me exploring tech blogs, watching tutorials, or reading novels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" #skillsSection>
+    <div class="container about-section py-4 px-3 py-sm-5 px-sm-5  skills">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-3 mb-sm-4 text-center">Skills</h2>
+          <ul class="skills-list">
+            <li *ngFor="let skill of skills">{{ skill }}</li>
+          </ul>
+          <div class="services row mt-3 mt-sm-5">
+            <!-- <h2>What I Do</h2> -->
+            <div class="col-sm-4 d-flex mb-4 mb-sm-0">
+              <div class="service-card d-flex flex-column text-center">
+                <h3 class="flex-grow-1 ">Web Development</h3>
+                <p>Build modern and responsive web applications using latest frameworks.</p>
+              </div>
+
+            </div>
+            <div class="col-sm-4 d-flex mb-4 mb-sm-0">
+              <div class="service-card d-flex flex-column text-center">
+                <h3 class="flex-grow-1 ">API Development</h3>
+                <p>Develop RESTful APIs using Node.js and Express, integrated with databases.</p>
+              </div>
+
+            </div>
+            <div class="  col-sm-4 d-flex ">
+              <div class="service-card d-flex flex-column text-center">
+                <h3 class="flex-grow-1 text-center">UI/UX Design</h3>
+                <p>Design clean and user-friendly interfaces that provide great user experience.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- Education section-->
+
+  <section  id="education" #educationSection>
+    <div class="container education py-4 px-3 py-sm-5 px-sm-5 ">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-3 mb-sm-4 text-center">Education</h2>
+          <div class="education-entry mb-4" *ngFor="let edu of education">
+            <div class="edubox">
+              <h4>{{ edu.degree }} - {{ edu.institution }}</h4>
+            </div>
+
+            <div class="eduDetail">
+              <p><strong>{{ edu.year }}</strong> | <em>{{ edu.performance }}</em></p>
+              <p class="mb-0">{{ edu.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- experience -->
+  <section  id="experience" #experienceSection>
+    <div class="container experience py-4 px-3 py-sm-5 px-sm-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center">Work Experience</h2>
+
+          <div class="experience-entry mb-2" *ngFor="let exp of experience">
+            <div class="expbox">
+              <div class="edubox">
+                <h4>{{ exp.company }} | {{ exp.role }}</h4>
+                <p class="mb-0"><strong>{{ exp.duration }}</strong></p>
+              </div>
+
+
+
+
+            </div>
+
+            <div class="project eduDetail mb-2" *ngFor="let project of exp.projects">
+
+              <h5> <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="linking">
+                  {{ project.name }}
+                </a> <span class="text-muted">({{ project.period }})</span></h5>
+
+              <p><strong>Tech Stack:</strong> {{ project.stack }}</p>
+              <p>{{ project.description }}</p>
+            </div>
+          </div>
+          <p>I have 3 years of hands-on experience working with HTML, CSS, Bootstrap, Angular, Node.js, and MongoDB,
+            developing responsive and scalable web applications.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section #contactSection id="contact">
+    <div class="container py-4 px-3 px-sm-5 py-sm-5 bg-gray">
+      <div class="row justify-content-center ">
+        <div class="col-sm-12">
+          <div class="contact">
+            <h2 class="mb-3 mb-sm-4 text-center">Contact Me</h2>
+            <form (ngSubmit)="submitForm()">
+              <label>
+                Name:
+                <input type="text" [(ngModel)]="contact.name" name="name" required>
+              </label>
+              <label>
+                Email:
+                <input type="email" [(ngModel)]="contact.email" name="email" required>
+              </label>
+              <label>
+                Message:
+                <textarea [(ngModel)]="contact.message" name="message" required></textarea>
+              </label>
+              <button type="submit">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+              <p>
+                Email: <a href="mailto:vipinjoshi103@gmail.com">Vipinjoshi103&#64;gmail.com</a>
+              </p>
+              <p>
+                Phone: <a href="tel:+919997004752">+91-9997004752</a>
+              </p>
+              <p>
+                WhatsApp: <a
+                  href="https://wa.me/919997004752?text=Hello%20Vipin%2C%20I%20am%20interested%20in%20connecting%20with%20you"
+                  target="_blank">
+                  Chat on WhatsApp
+                </a>
+
+              </p>
+              <p>
+                LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">My LinkedIn</a>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Call to Action -->
+  <!-- <section class="cta">
+    <h2>Want to work together?</h2>
+    <button>Contact Me</button>
+  </section>
+</div> -->
