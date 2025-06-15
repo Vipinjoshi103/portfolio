@@ -1,7 +1,7 @@
 {
   "routes": {
-    "/portfolio_app": {},
-    "/portfolio_app/Contact-us": {},
-    "/portfolio_app/home": {}
+    "/portfolio": {},
+    "/portfolio/Contact-us": {},
+    "/portfolio/home": {}
   }
 }
